@@ -24,7 +24,20 @@
       "stage-0"
     ]
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/octalmage/ngrokrock.git"
+  },
+  "keywords": [
+    "ngrok",
+    "ngrokrock"
+  ],
+  "author": "Jason Stallings",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/octalmage/ngrokrock/issues"
+  },
+  "homepage": "https://github.com/octalmage/ngrokrock",
   "license": "MIT",
   "bin": {
     "ngrokrock": "build/index.js"
