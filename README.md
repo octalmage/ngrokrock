@@ -1,6 +1,6 @@
 # Description
 
-This command line app will automatically upload ngrok domains to [ngrokrock.com](https://ngrokrock.com).
+This command line app will automatically upload [ngrok](https://ngrok.com/) domains to [ngrokrock.com](https://ngrokrock.com).
 
 ## Installation
 
