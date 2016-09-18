@@ -1,6 +1,6 @@
 {
   "name": "ngrokrock",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Keep ngrokrock.com up to date.",
   "main": "build/index.js",
   "dependencies": {
@@ -38,7 +38,6 @@
     "url": "https://github.com/octalmage/ngrokrock/issues"
   },
   "homepage": "https://github.com/octalmage/ngrokrock",
-  "license": "MIT",
   "bin": {
     "ngrokrock": "build/index.js"
   }
