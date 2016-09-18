@@ -56,6 +56,7 @@ function check() {
 			}
 		})
 		.catch((err) => {
+			console.log(translateError(err));
 			// TODO: Do something here.
 			// ngrok isn't running.
 		}).finally(() => {
@@ -88,11 +89,7 @@ function uniqueTunnels(tunnels) {
 			.then((response) => {
 				resolve(_.difference(tunnels, response));
 			})
-			.catch((err) => {
-				// TODO: Do something here.
-				// ngrokrock didn't respond.
-				reject(err);
-			});
+			.catch(reject);
 	});
 
 	return promise;
@@ -111,6 +108,14 @@ function buildQuery(tunnels) {
 		query += 'domain[]=' + encodeURIComponent(domain);
 	}
 	return query;
+}
+
+function translateError(err) {
+	if (typeof err.error !== 'undefined' && err.error.code === 'ECONNREFUSED') {
+		return 'ngrok not running.';
+	} else if (typeof err.statusCode !== 'undefined' && err.statusCode === 403) {
+		return 'Authentication error.';
+	}
 }
 
 function parseJson(response){
