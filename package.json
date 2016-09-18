@@ -1,6 +1,6 @@
 {
   "name": "ngrokrock",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Keep ngrokrock.com up to date.",
   "main": "build/index.js",
   "dependencies": {
