@@ -2,11 +2,14 @@
 const program = require('commander');
 const rp = require('request-promise');
 const _ = require('underscore');
-const pjson = require('../package.json');
+const updateNotifier = require('update-notifier');
+const pkg = require('../package.json');
 let tunnels;
 
+updateNotifier({pkg}).notify();
+
 program
-	.version(pjson.version)
+	.version(pkg.version)
 	.option('-u, --username <value>', 'Your ngrokrock username.')
 	.option('-p, --password <value>', 'Your ngrokrock password.')
 	.option('-h, --host [value]', 'The ngrok API host.', 'http://127.0.0.1:4040')
