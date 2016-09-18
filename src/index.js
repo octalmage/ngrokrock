@@ -53,6 +53,7 @@ function check() {
 			}
 		})
 		.catch((err) => {
+			// TODO: Do something here.
 			// ngrok isn't running.
 		}).finally(() => {
 			defer();
@@ -83,6 +84,11 @@ function uniqueTunnels(tunnels) {
 			.then(parseJson)
 			.then((response) => {
 				resolve(_.difference(tunnels, response));
+			})
+			.catch((err) => {
+				// TODO: Do something here.
+				// ngrokrock didn't respond.
+				reject(err);
 			});
 	});
 
