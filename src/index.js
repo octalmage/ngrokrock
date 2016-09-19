@@ -4,7 +4,6 @@ const rp = require('request-promise');
 const _ = require('underscore');
 const updateNotifier = require('update-notifier');
 const pkg = require('../package.json');
-let tunnels;
 
 updateNotifier({pkg}).notify();
 
@@ -48,11 +47,8 @@ function check() {
 		.then(_.uniq)
 		.then(uniqueTunnels)
 		.then((response) => {
-			if ( !_.isEqual(response, tunnels) ) {
-				tunnels = response;
-				if (!_.isEmpty(tunnels)) {
-					submit(response);
-				}
+			if (!_.isEmpty(response)) {
+				submit(response);
 			}
 		})
 		.catch((err) => {
